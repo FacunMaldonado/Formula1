@@ -2,7 +2,22 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: F1_regular;
+}
+
+@font-face {
+  font-family: 'F1';
+  src: url('../font/Formula1-Bold.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'F1_regular';
+  src: url('../font/Formula1-Regular.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 ::-webkit-scrollbar {
