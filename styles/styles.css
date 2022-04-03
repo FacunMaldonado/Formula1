@@ -156,9 +156,12 @@ main{
 
 footer{
   text-align: center;
-  align-items: center;
-  
 }
+
+footer li{
+  display: inline-block;
+}
+
 
 /* RELOJ */
 
