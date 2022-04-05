@@ -119,7 +119,7 @@ main{
   transform: translate(-50%, -50%);
   filter: blur(30px);
   z-index: 2;
-  background: rgba(13, 13, 13, 0.945);
+  /* background: rgba(13, 13, 13, 0.945); */
   /* background: linear-gradient(0deg, rgba(13, 13, 13, 0.212) 20%, rgb(0, 0, 0) 100%); */
 }
 
