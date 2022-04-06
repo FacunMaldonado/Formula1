@@ -109,5 +109,11 @@ main{
 }
 
 footer{
-    text-align: center;
-  }
+  text-align: center;
+  position: relative;
+  margin-top: 4rem;
+}
+
+footer li{
+  display: inline-block;
+}

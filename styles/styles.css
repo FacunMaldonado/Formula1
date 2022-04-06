@@ -266,15 +266,16 @@ main{
 }
 
 .textLargada p{
-width: 100%;
-font-size: 30px;
-}
+  width: 100%;
+  font-size: 30px;
+  }
 
 /* footer */
 
 footer{
   text-align: center;
   position: relative;
+  margin-top: 4rem;
 }
 
 footer li{
@@ -284,11 +285,15 @@ footer li{
 
                             /* MEDIAS */
 
-@media (max-width: 1080px) {
+@media (max-width: 768) {
+  nav ul {
+    display: none;
+  }
+
   .container2{
     grid-template-columns: 1fr   ;
     gap: 1rem;
-    grid-template-rows: 200px 200px 1fr;
+    grid-template-rows: 100px 200px 1fr;
     padding:  2rem;
     grid-template-areas: 
     "titulo  "
@@ -298,21 +303,6 @@ footer li{
 
   .textLargada p{
     width: 100%;
-    font-size: 30px;
+    font-size: 10px;
     }
 }
-
-@media (max-width: 750px){
-  .textLargada p{
-    font-size: 20px;
-  }
-  .titulo h3{
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 980px){
-  .container1{
-    display: none;
-  }
-} 
