@@ -288,7 +288,12 @@ footer li{
 
                             /* MEDIAS */
 
-                        
+@media (max-width: 1024) {
+  .textLargada p{
+    width: 100%;
+    font-size: 15px;
+    }
+}                       
 
 @media (max-width: 768px) {
   /* nav ul {
