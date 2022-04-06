@@ -87,8 +87,9 @@ nav li a {
 
 .teams ul{
     display: flex;
-    flex-flow: wrap;
+    flex-wrap: wrap;
     list-style: none;
+    justify-content: center;
   } 
   
   .nombreEquipo{
