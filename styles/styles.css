@@ -264,13 +264,48 @@ main{
 .textLargada{
   grid-area: textLargada;
   position: relative;
-
 }
 
 .textLargada p{
   width: 100%;
   font-size: 35px;
-  }
+}
+
+/* CONTAINER 3 */
+.container3{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr  ;
+  gap: 4rem;
+  grid-template-rows: 200px 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0 2rem;
+  grid-template-areas: 
+  "titulo  titulo "
+  "textPilotos imagenPilotos"
+}
+
+/* .imagenPilotos{
+  position: relative;
+  grid-area: imagenLargada;
+  transition: all .5s ease-in-out;
+}
+
+.imagenPilotos img {
+  object-fit: cover;
+  width: 100%;
+} */
+
+.textPilotos{
+  grid-area: textPilotos;
+}
+
+.textPilotos p{
+  width: 100%;
+  font-size: 35px;
+}
 
 /* footer */
 
