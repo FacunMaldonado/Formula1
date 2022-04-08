@@ -230,7 +230,7 @@ main{
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr  ;
-  gap: 4rem;
+  column-gap: 10rem;
   grid-template-rows: 200px 1fr;
   justify-items: center;
   align-items: center;
@@ -276,30 +276,42 @@ main{
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr  ;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   grid-template-rows: 200px 1fr;
   justify-items: center;
   align-items: center;
   padding: 0 2rem;
   grid-template-areas: 
-  "titulo  titulo "
+  "titulo3 titulo3 "
   "textPilotos imagenPilotos"
 }
 
-/* .imagenPilotos{
+.titulo3{
+  grid-area: titulo3;
+  text-align: center;
+}
+
+.titulo3 h3{
+  font-size: 3rem;
+  color: white;
+/*   padding: 30px 0; */
+}
+
+.imagenPilotos{
   position: relative;
-  grid-area: imagenLargada;
+  grid-area: imagenPilotos;
   transition: all .5s ease-in-out;
 }
-*/
+
 .imagenPilotos img {
   object-fit: cover;
-  /* width: 100; */
+  width: 50%;
 }
 
 .textPilotos{
   grid-area: textPilotos;
+  position: relative;
 }
 
 .textPilotos p{
@@ -328,36 +340,48 @@ footer li{
     font-size: 25px;
     }
 }
+
 @media (max-width: 1190px) {
   .container2{
-    display: inline-block;
-    padding-top: 3rem;
-  };
-
-  /* NO ME FUNCIONA ANASHEI */
-  /* .container3{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr  ;
-    gap: 4rem;
-    grid-template-rows: 200px 1fr;
-    justify-items: center;
-    align-items: center;
-    grid-area: 
-    "titulo titulo"
-    "imagenPilotos imagenPilotos"
-    "textPilotos textPilotos"
-  }; */
-
-  .titulo h3{
-    font-size: 3rem;
-    color: white;
-    padding: 30px 0;
+    grid-template-columns: 1fr;
+    /* gap: 1rem; */
+    grid-template-rows: 100px 1fr 200px;
+    /* padding:  2rem; */
+    grid-template-areas: 
+   "titulo  "
+    "imagenLargada"
+    "textLargada"
   }
 
   .imagenLargada{
     padding: 2rem 0;
   }
+
+  /* NO ME FUNCIONA ANASHEI */
+  .container3{
+    display: inline-block;
+    padding-top: 3rem;
+  }
+
+  .imagenPilotos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  .imagenPilotos img{
+    object-fit: cover;
+    margin-left: -1.5rem;
+  }
+
+  .titulo3 h3{
+    font-size: 3rem;
+    color: white;
+    padding: 30px 0;
+  }
+
 }                         
 
 
@@ -371,17 +395,6 @@ footer li{
 }                       
 
 @media (max-width: 768px) {
-
-  .container2{
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    grid-template-rows: 100px 200px 1fr;
-    padding:  2rem;
-    grid-template-areas: 
-    "titulo  "
-    "textLargada"
-    "imagenLargada  "
-  }
 
   .titulo{
     font-size: 10px;
@@ -455,6 +468,6 @@ footer li{
     width: 20vh;
     }
   .textPilotos p{
-    font-size: 10px;
+    font-size: 15px;
     }
 }
