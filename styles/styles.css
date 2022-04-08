@@ -292,11 +292,11 @@ main{
   grid-area: imagenLargada;
   transition: all .5s ease-in-out;
 }
-
+*/
 .imagenPilotos img {
   object-fit: cover;
-  width: 100%;
-} */
+  /* width: 100; */
+}
 
 .textPilotos{
   grid-area: textPilotos;
@@ -321,7 +321,7 @@ footer li{
 
 
 
-                            /* MEDIAS */
+                        /* MEDIAS */
 @media (max-width: 1375px){
   .textLargada p{
     width: 100%;
@@ -334,15 +334,26 @@ footer li{
     padding-top: 3rem;
   };
 
+  /* NO ME FUNCIONA ANASHEI */
+  /* .container3{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  ;
+    gap: 4rem;
+    grid-template-rows: 200px 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-area: 
+    "titulo titulo"
+    "imagenPilotos imagenPilotos"
+    "textPilotos textPilotos"
+  }; */
+
   .titulo h3{
     font-size: 3rem;
     color: white;
     padding: 30px 0;
   }
-
-  /* .titulo{
-    padding-top: 10rem;
-  } */
 
   .imagenLargada{
     padding: 2rem 0;
@@ -360,8 +371,6 @@ footer li{
 }                       
 
 @media (max-width: 768px) {
-
-  
 
   .container2{
     grid-template-columns: 1fr;
@@ -383,7 +392,13 @@ footer li{
     font-size: 20px;
     }
 
-  
+.imagenPilotos img {
+  width: 45vh;
+  }
+.textPilotos p{
+  font-size: 25px;
+  }
+
 }
 
 @media(max-width: 575px){
@@ -396,13 +411,20 @@ footer li{
     display: none;;
   } 
 
-   .videoPrincipalMovil{
+  .videoPrincipalMovil{
     display: inline-block;
   }
   .videoPrincipalMovil video {
     width: 100%;
     padding-top: 160px;
   }
+
+  .imagenPilotos img {
+    width: 35vh;
+    }
+  .textPilotos p{
+    font-size: 20px;
+    }
 }
 
 @media (max-width: 425px){
@@ -412,6 +434,13 @@ footer li{
     width: 100%;
     position: relative;
   }
+
+  .imagenPilotos img {
+    width: 20vh;
+    }
+  .textPilotos p{
+    font-size: 15px;
+    }
 }
 
 @media (max-width: 384px){
@@ -420,3 +449,12 @@ footer li{
     font-size: 15px;
     }
 }    
+
+@media(max-width: 320px){
+  .imagenPilotos img {
+    width: 20vh;
+    }
+  .textPilotos p{
+    font-size: 10px;
+    }
+}
