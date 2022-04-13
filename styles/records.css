@@ -85,6 +85,12 @@ nav li a {
     letter-spacing: 1px;
 }
 
+nav li a:hover{
+  color: red;
+  /* text-shadow: 2px 2px 5px rgb(255, 255, 255); */
+  filter: drop-shadow(1px 1px 20px rgba(255, 255, 255, 0.767));
+}
+
 .teams ul{
     display: flex;
     flex-flow: wrap;
