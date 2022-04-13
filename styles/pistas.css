@@ -100,7 +100,10 @@ nav li a {
   body{
     background-color: rgb(1, 1, 1);
     color: aliceblue;
+}
 
+body h1{
+  text-align: center;
 }
 
 main{
@@ -108,6 +111,14 @@ main{
   overflow: hidden;
 }
 
+/* footer */
+
 footer{
-    text-align: center;
-  }
+  text-align: center;
+  position: relative;
+  margin-top: 4rem;
+}
+
+footer li{
+  display: inline-block;
+}
