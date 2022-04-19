@@ -35,38 +35,32 @@
             <legend>
                 Formulario de Contacto
             </legend>
-    
-            <div>
                 <label for="nombre">Completa tu nombre</label>
                 <input type="text" name="nombre" id="">
-            </div>
     
-            <div>
                 <label for="email">Completa tu email</label>
                 <input type="text" name="email">
-            </div>
     
-            <div>
                 <label for="">Selecciona tu pais</label>
                 <select name="pais" id="">
                     <option value="Argentina">Argentina</option>
                     <option value="Chile">Chile</option>
                     <option value="Colombia">Colombia</option>
                 </select>
-            </div>
     
-            <div>
                 <label for="genero">Elige tu genero</label>
                 <br>
-                <input type="radio" name="genero" value="Hombre">Hombre <br>
-                <input type="radio" name="genero" value="Mujer">Mujer <br>
-                <input type="radio" name="genero" value="No-binario">No-binario
-            </div>
-    
-            <div>
-                <input type="submit" name="" id="">
-                <input type="reset">
-            </div>
+                    <input class="containerGeneros" type="radio" name="genero" value="Hombre">Hombre <br>
+                    <input class="containerGeneros" type="radio" name="genero" value="Mujer">Mujer <br>
+                    <input class="containerGeneros" type="radio" name="genero" value="No-binario">No-binario
+                
+      
+                <div class="bottomForm">
+                    <button type="submit" name="" id="">Enviar</button>
+                    <button type="reset"> reset</button>
+                </div>
+           
+
         </fieldset>
     </form>
 
