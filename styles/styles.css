@@ -355,7 +355,7 @@ footer li{
     grid-template-rows: 100px 1fr 200px;
     /* padding:  2rem; */
     grid-template-areas: 
-   "titulo  "
+    "titulo  "
     "imagenLargada"
     "textLargada"
   }
