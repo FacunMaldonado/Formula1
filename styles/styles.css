@@ -4,14 +4,14 @@
   align-items: center;
   flex-direction: column;
   row-gap: 2rem; }
-  .pilotosContainer .mercedes, .pilotosContainer .ferrari {
+  .pilotosContainer .mercedes, .pilotosContainer .ferrari, .pilotosContainer .redbull, .pilotosContainer .astonMartin, .pilotosContainer .mcLaren, .pilotosContainer .alphaRomeo, .pilotosContainer .haas, .pilotosContainer .williams, .pilotosContainer .alpine, .pilotosContainer .alphaTauri {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem; }
-    .pilotosContainer .mercedes img, .pilotosContainer .ferrari img {
+    .pilotosContainer .mercedes img, .pilotosContainer .ferrari img, .pilotosContainer .redbull img, .pilotosContainer .astonMartin img, .pilotosContainer .mcLaren img, .pilotosContainer .alphaRomeo img, .pilotosContainer .haas img, .pilotosContainer .williams img, .pilotosContainer .alpine img, .pilotosContainer .alphaTauri img {
       border: 10px groove rgba(36, 36, 36, 0.644);
       display: flex;
       position: relative;
