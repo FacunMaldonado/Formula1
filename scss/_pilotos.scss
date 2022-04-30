@@ -1,4 +1,13 @@
 
+@mixin pilotosFlex {
+    display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+}
+
 .pilotosContainer{
     display: flex;
     width: 100%;
@@ -6,12 +15,7 @@
     flex-direction: column;
     row-gap: 2rem;
         .mercedes, .ferrari, .redbull, .astonMartin, .mcLaren, .alphaRomeo, .haas, .williams, .alpine, .alphaTauri{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
+                @include pilotosFlex();
                 img{
                     border: 10px groove rgba(36, 36, 36, 0.644);
                     display: flex;
