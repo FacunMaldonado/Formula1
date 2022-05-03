@@ -306,6 +306,7 @@ main{
 }
 
 .imagenPilotos{
+  text-align: center;
   position: relative;
   grid-area: imagenPilotos;
   transition: all .5s ease-in-out;
@@ -317,6 +318,7 @@ main{
 }
 
 .textPilotos{
+  margin-left: 10rem;
   grid-area: textPilotos;
   position: relative;
 }
@@ -388,6 +390,9 @@ footer li{
     color: white;
     padding: 30px 0;
   }
+
+  .textPilotos{
+    margin-left: 0rem;
 
 }                         
 
