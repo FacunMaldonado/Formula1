@@ -1,0 +1,689 @@
+
+/////////////////////////////////////////////////////////
+// Design Tokens
+/////////////////////////////////////////////////////////
+
+html {
+	
+	--black: #000000;
+	--white: #FFFFFF;
+	
+	--darkest-gray: #1B191E;
+	--dark-gray: #323035;
+	--medium-gray: #686677;
+	--light-gray: #908F95;
+	--lightest-gray: #F5F6F7;
+	
+	--primary: rgba(252, 35, 28, 1);
+	--primary-accent: rgba(252, 35, 28, .32);
+}
+
+// CSS Variable theme mapping
+:root {
+	--root-bg: var(--black);
+	--root-color: var(--light-gray);
+	--heading-text-color: var(--white);
+	--component-bg: var(--darkest-gray);
+	--accent: var(--dark-gray);
+	&.theme--dark {
+	--root-bg: var(--lightest-gray);
+	--root-color: var(--dark-gray);
+	--heading-text-color: var(--black);
+	--component-bg: var(--white);
+		--accent: var(--light-gray);
+	}
+}
+
+$colors: (
+	dark-gray: var(--dark-gray),
+	medium-gray: var(--medium-gray),
+	light-gray: var(--light-gray),
+	black: var(--black),
+	white: var(--white)
+);
+
+$root-color: var(--root-color);
+$root-bg: var(--root-bg);
+$primary: var(--primary);
+$primary-accent: var(--primary-accent);
+$heading-text-color: var(--heading-text-color);
+$component-bg: var(--component-bg);
+$accent: var(--accent);
+
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+
+@function color($key) {
+	@if map-get($colors, $key) {
+		@return map-get($colors, $key);
+	} @else {
+		@warn 'You messed up dawg: that color does not exist in the palette'
+	}
+}
+
+$type-sizes: (
+	h1: 								70px,
+	h2: 								40px,
+	h3: 								28px,
+	h4: 								24px,
+	h5: 								16px,
+	h6: 								14px,
+	p-lead:					20px,
+	p-small: 			14px,
+	p: 									17px,
+	small: 					14px,
+	small-caps: 12px
+);
+
+$type-sizes-mobile: (
+	h1: 								40px,
+	h2: 								32px,
+	h3: 								26px,
+	h4: 								22px,
+	h5: 								18px,
+	h6: 								16px,
+	p-lead:					18px,
+	p-small: 			14px,
+	p: 									16px,
+	small: 					14px,
+	small-caps: 12px
+);
+
+@function type-size($key) {
+	@if(map-get($type-sizes, $key)) {
+		@return map-get($type-sizes, $key)
+	}
+	@else {
+		@warn 'The size you entered does not exist'
+	}
+}
+
+@function type-size-mobile($key) {
+	@if(map-get($type-sizes-mobile, $key)) {
+		@return map-get($type-sizes-mobile, $key)
+	}
+	@else {
+		@warn 'The size you entered does not exist'
+	}
+}
+
+$spacing-unit: 8px;
+
+$spacing-sizes: (
+	xxs: $spacing-unit/4,
+	xs: $spacing-unit/2,
+	sm: $spacing-unit,
+	md: $spacing-unit*2,
+	lg: $spacing-unit*4,
+	xl: $spacing-unit*8,
+	xxl: $spacing-unit*16
+);
+
+@function spacing($key) {
+	@if(map-get($spacing-sizes, $key)) {
+		@return map-get($spacing-sizes, $key)
+	}
+	@else {
+		@warn 'The size you entered does not exist'
+	}
+}
+
+$border-radius-sizes: (
+	sm: .3rem,
+	md: .5rem,
+	lg: .8rem
+);
+
+@function border-radius($key) {
+	@if(map-get($border-radius-sizes, $key)) {
+		@return map-get($border-radius-sizes, $key)
+	}
+	@else {
+		@warn 'The size you entered does not exist'
+	}
+}
+
+$border-radius-sm: border-radius(sm);
+$border-radius: border-radius(md);
+$border-radius-lg: border-radius(lg);
+
+$box-shadow-sizes: (
+	none: 0,
+	xs: 0px 0px 0px 1px rgba(black, .1),
+	sm: 0px 3px 6px -1px rgba(black, .1),
+	md: 0px 5px 12px -2px rgba(black, .1),
+	lg: 0px 12px 25px -4px rgba(black, .1),
+	xl: 0px 18px 36px -6px rgba(black, .1)
+);
+
+@function box-shadow($key) {
+	@if(map-get($box-shadow-sizes, $key)) {
+		@return map-get($box-shadow-sizes, $key)
+	}
+	@else {
+		@warn 'The size you entered does not exist'
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Base
+/////////////////////////////////////////////////////////
+
+html {
+	font-size :62.5%;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: $root-bg;
+	color: $root-color;
+	font-size: 1.6rem;
+	font-family: $font-family;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: $heading-text-color;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-top: 0;
+}
+
+@mixin headerType($letter-spacing, $margin-bottom, $map-size) {
+	letter-spacing: $letter-spacing;
+	margin-bottom: $margin-bottom;
+	font-size: type-size($map-size);
+	@media screen and (max-width: 768px) {
+		font-size: type-size-mobile($map-size);
+	}
+}
+
+$headers: (h1,h2,h3,h4,h5,h6);
+
+@each $header in $headers {
+	#{$header} {
+		@include headerType(0, 1.6rem, #{$header});
+	}
+}
+
+.paragraph {
+	&--lead {
+		font-size: type-size(p-lead);
+		@media screen and (max-width: 768px) {
+			font-size: type-size-mobile(p-lead);
+		}
+	}
+	&--small {
+		font-size: type-size(p-small);
+	}
+}
+
+small {
+	font-size: type-size(small);
+}
+
+.small {
+	&--caps {
+		font-size: type-size(small-caps);
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+	}
+}
+
+a {
+	color: $heading-text-color;
+	&:hover, &:focus {
+		color: $primary;
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Layout
+/////////////////////////////////////////////////////////
+
+.l-wrapper {
+	$x-padding: spacing(md);
+	max-width: 600px;
+	margin: spacing(md) auto;
+	padding-left: $x-padding;
+	padding-right: $x-padding;
+}
+
+/////////////////////////////////////////////////////////
+// List
+/////////////////////////////////////////////////////////
+
+.c-list {
+	margin: 0;
+	padding: 0 0 spacing(lg);
+	list-style-type: none;
+	width: 100%;
+}
+
+/////////////////////////////////////////////////////////
+// List Item
+/////////////////////////////////////////////////////////
+
+.c-race {
+	margin-bottom: spacing(md);
+	display: flex;
+	background: $component-bg;
+	padding: spacing(md);
+	border-radius: border-radius(lg);
+	box-shadow: box-shadow(md), box-shadow(lg);
+	position: relative;
+	transition: all 240ms ease-out 0s;
+	&--hidden {
+		display: none !important;
+	}
+	&__round {
+		$size: spacing(lg);
+		width: $size;
+		height: $size;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: $root-bg;
+		border-radius: 50%;
+		font-size: type-size(h5);
+		margin-right: spacing(md);
+		position: relative;
+		&:after {
+			content: 'Race';
+			font-size: type-size(small-caps);
+			text-transform: uppercase;
+			letter-spacing: .08em;
+			font-weight: 700;
+			position: absolute;
+			bottom: -#{spacing(lg)};
+			left: -2px;
+			opacity: .32;
+			transform: rotate(-90deg);
+		}
+	}
+	&__title {
+		margin-bottom: spacing(sm);
+	}
+	&__date {
+		margin-bottom: spacing(sm);
+	}
+		&--inactive {
+			&:after {
+				position: absolute;
+				content: 'Ended';
+				right: spacing(sm);
+				bottom: spacing(sm);
+				font-size: type-size(small-caps);
+				text-transform: uppercase;
+				letter-spacing: .05em;
+				background: $root-bg;
+				padding: spacing(sm);
+				border-radius: border-radius(md);
+			}
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Tabs
+/////////////////////////////////////////////////////////
+
+.c-tab-bar {
+	margin: 0 0 spacing(md);
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	&__item {
+		margin-left: spacing(sm);
+		margin-right: spacing(sm);
+		background: $component-bg;
+		border: 1px solid rgba(black, .12);
+		padding: spacing(sm) spacing(md);
+		font-size: type-size(small-caps);
+		border-radius: 999px;
+		text-align: center;
+		min-width: 100px;
+		user-select: none;
+		cursor: pointer;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		transition: all 120ms ease-out 0s;
+		&--active {
+			background: $primary;
+			border-color: $primary;
+			color: var(--white);
+		}
+		&:hover {
+			opacity: .8;
+			box-shadow: box-shadow(sm), box-shadow(md);
+		}
+		&:active {
+			box-shadow: inset 0px 0px 7px rgba(black, .12), inset 0px 0px 2px rgba(black, .24);
+			transform: scale(.97);
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Empty State
+/////////////////////////////////////////////////////////
+
+.c-empty-state {
+	text-align: center;
+	padding: spacing(lg) spacing(md);
+	width: 100%;
+	max-width: 450px;
+	margin: auto;
+	&__hero {
+		width: 200px;
+		margin-bottom: spacing(md);
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Latest
+/////////////////////////////////////////////////////////
+
+.c-latest {
+	position: relative;
+	&__background {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		user-select: none;
+		filter: grayscale(1);
+		opacity: .12;
+		user-select: none;
+		z-index: 1;
+	}
+	&__item {
+		background: $primary;
+		color: var(--white);
+		position: relative;
+		margin-bottom: spacing(lg);
+		&:after {
+			content: '';
+			position: absolute;
+			top:0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,.24));
+		}
+		.c-race__title {
+			color: inherit;
+		}
+		.c-race__round {
+			color: $heading-text-color;
+		}
+		.c-race__content {
+			text-shadow: 0px 1px 1px rgba(black, .2), 0px 2px 4px rgba(black, .25);
+			position: relative;
+			z-index: 10;
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Header
+/////////////////////////////////////////////////////////
+
+.c-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: spacing(lg);
+	margin-bottom: spacing(lg);
+}
+
+/////////////////////////////////////////////////////////
+// Field
+/////////////////////////////////////////////////////////
+
+.c-field {
+	display: block;
+	margin-bottom: spacing(lg);
+	position: relative;
+	&:after {
+		$size: 10px;
+		width: $size;
+		height: $size;
+		border-top: 3px solid;
+		border-right: 3px solid;
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) rotate(135deg);
+		right: spacing(md);
+	}
+	&__label {
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		margin-right: spacing(sm);
+		position: absolute;
+		top: 50%;
+		left: spacing(md);
+		transform: translateY(-50%);
+	}
+	&__input {
+		font-family: inherit;
+		padding: spacing(md) spacing(md) spacing(md) 96px;
+		background: transparent;
+		color: inherit;
+		width: 100%;
+		appearance: none;
+		border-color: currentColor;
+		&:focus, &:active {
+			border-color: $primary;
+			color: $heading-text-color;
+			outline: 0;
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Logo
+/////////////////////////////////////////////////////////
+
+.c-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	&__icon {
+		margin-right: spacing(md);
+		display: block;
+	}
+	&__wordmark {
+		color: $heading-text-color;
+			font-size: type-size(h5);
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+		&--subtitle {
+			color: var(--medium-gray);
+			margin-left: spacing(sm);
+			font-weight: 400;
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Footer
+/////////////////////////////////////////////////////////
+
+.c-footer {
+	padding-bottom: spacing(md);
+	&__logo {
+		$size: 32px;
+		width: $size;
+		height: $size;
+		color: $root-color;
+		transition: all 120ms ease-out 0s;
+		&:hover, &:focus {
+			color: #00d1b2;
+			transform: scale(1.05);
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Button
+/////////////////////////////////////////////////////////
+
+.c-button {
+	font-family: inherit;
+	border-radius: border-radius(lg);
+	border: 0;
+	display: inline-flex;
+	align-items: center;
+	padding: spacing(sm);
+	cursor: pointer;
+	color: inherit;
+	background: $component-bg;
+	box-shadow: box-shadow(sm), box-shadow(md), box-shadow(lg);
+	transition: all 120ms ease-out 0s;
+	&:focus, &:active {
+		outline: 0;
+	}
+	&:hover {
+		opacity: .8;
+	}
+	&:active {
+		box-shadow: inset 0px 0px 7px rgba(black, .12), inset 0px 0px 2px rgba(black, .24);
+		transform: scale(.97);
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Loader
+/////////////////////////////////////////////////////////
+
+.c-loader {
+	$size: 104px;
+	width: $size;
+	height: $size;
+	transform-origin: center;
+	animation: rotate 2s linear infinite;
+	display: block;
+	text-align: center;
+	margin: spacing(xl) auto spacing(md);
+	circle {
+		stroke-width: 2;
+		fill: transparent;
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
+		stroke-linecap: round;
+		animation: dash 1.5s ease-in-out infinite;
+	}
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
+		stroke: $heading-text-color;
+	}
+	50% {
+		stroke-dasharray: 90, 200;
+		stroke-dashoffset: -35px;
+		stroke: $primary;
+	}
+	100% {
+		stroke-dashoffset: -125px;
+		stroke: $heading-text-color;
+	}
+}
+
+//////////////////////////////////////////////
+// Color Utilities
+//////////////////////////////////////////////
+
+@each $key,$val in $colors {
+	.u-color--#{$key} {
+		color: $val !important;
+	}
+	
+	.u-bg--#{$key} {
+		background: $val !important;
+	}
+}
+
+//////////////////////////////////////////////
+// Text Utilities
+//////////////////////////////////////////////
+
+.u-text--center {
+	text-align: center !important;
+}
+
+.u-text--left {
+	text-align: left !important;
+}
+
+.u-text--right {
+	text-align: right !important;
+}
+
+//////////////////////////////////////////////
+// Spacing Utilities
+//////////////////////////////////////////////
+
+$directions: (
+	l: left,
+	r: right,
+	t: top,
+	b: bottom
+);
+
+@each $key,$val in $spacing-sizes {
+	@each $label,$direction in $directions {
+		.u-padding-#{$label}--#{$key} {
+			padding-#{$direction}: $val !important;
+		}
+		.u-margin-#{$label}--#{$key} {
+			margin-#{$direction}: $val !important;
+		}
+	}
+}
+
+.u-margin-x--auto {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.u-margin-y--auto {
+	margin-top: auto !important;
+	margin-bottom: auto !important;
+}
+
+@keyframes fadeUp {
+	from {
+		transform: translateY(16px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/f1-3.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/carreras.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -31,10 +32,76 @@
 
     <h1>CARRERAS</h1>
 
-    <iframe id="Vgtj1TqGxG8-video" class="o-wrapper--panel u-fit js-iframe" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/Vgtj1TqGxG8?wmode=transparent&amp;controls=0&amp;showinfo=0&amp;autoplay=0&amp;loop=0&amp;rel=0&amp;modestbranding=0&amp;html5=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fthenewmobileworkforce.imm-g-prod.com&amp;widgetid=1"></iframe>
+    <!-- <iframe id="Vgtj1TqGxG8-video" class="o-wrapper--panel u-fit js-iframe" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/Vgtj1TqGxG8?wmode=transparent&amp;controls=0&amp;showinfo=0&amp;autoplay=0&amp;loop=0&amp;rel=0&amp;modestbranding=0&amp;html5=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fthenewmobileworkforce.imm-g-prod.com&amp;widgetid=1"></iframe> -->
+
+    <!-- PROXIMAS CARRERAS -->
+    <div class="l-wrapper">
+        <div class="c-header">
+          <div class="c-logo">
+            <svg class="c-logo__icon" xmlns="http://www.w3.org/2000/svg" width="75" height="19.5" viewBox="0 0 100 26" fill="none">
+              <g>
+                <path d="M84.4734 0L59.4406 26H74.9879L100.021 0H84.4734Z" fill="var(--primary)"></path>
+                <path d="M0 25.9991L18.716 6.54561C20.6882 4.43594 23.0546 2.76704 25.6701 1.6413C28.2856 0.515569 31.0949 -0.0432571 33.9257 -0.000891236H82.3173L72.9352 9.7509H36.3849C34.3265 9.72193 32.2839 10.1289 30.3819 10.9469C28.4798 11.7649 26.7582 12.9768 25.322 14.5087L14.2591 25.9991H0Z" fill="var(--primary)"></path>
+                <path d="M16.7046 26L27.3473 14.9461C28.4191 13.7981 29.7047 12.8889 31.1259 12.2739C32.5471 11.6589 34.0739 11.3509 35.6134 11.3687H71.3371L62.6851 20.4122H38.1828C37.2304 20.3996 36.2855 20.5885 35.4056 20.9674C34.5257 21.3462 33.7292 21.9071 33.0647 22.6159L29.8064 26H16.7046Z" fill="var(--primary)"></path>
+              </g>
+            </svg>
+            <div class="c-logo__wordmark">
+              <div class="c-logo__wordmark">Race Times</div>
+            </div>
+          </div>
+          <button class="c-button" id="themeChange">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-reactid="1166">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="c-field">
+          <label class="c-field__label">Season:</label>
+          <select class="c-field__input" id="changeSeason">
+            <option selected="selected" value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
+          </select>
+        </div>
+        <div class="c-latest"></div>
+        <ul class="c-tab-bar">
+          <li class="c-tab-bar__item c-tab-bar__item--active" data-event="upcoming">Upcoming</li>
+          <li class="c-tab-bar__item" data-event="past">Past</li>
+          <li class="c-tab-bar__item" data-event="all">All</li>
+        </ul>
+        <ul class="c-list" id="body"></ul>
+      </div>
+      <footer class="c-footer u-text--center">
+        <p><small>Data provided by:</small><br/><a href="http://ergast.com/mrd/" target="_blank">Ergast Developer API</a></p><a href="http://ryanparag.com/" target="_blank">
+          <svg class="c-footer__logo" id="grapalab_icon" data-name="Grapa_lab_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="currentColor">
+            <path d="M0,0V48H48V0ZM29.27,38.61a27.35,27.35,0,0,1-4.61.39C15.56,39,9,33,9,24,9,14.84,15.76,9,24.45,9c4.47,0,8.61,1.49,11,3.78l-4.35,4.95a8.45,8.45,0,0,0-6.4-2.66c-4.83,0-8.37,3.78-8.37,8.89s3.1,9,8.69,9a11,11,0,0,0,4.25-.74Zm6.37-6.47H29.32V27H23.89V21.44H35.64Z"></path>
+          </svg></a>
+      </footer>
 
     <footer>
         <h3>Todos los derechos reservados</h3>
     </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.25/moment-timezone.min.js"></script>
+    <script src="../scripts/carreras.js"></script>
 </body>
 </html>
