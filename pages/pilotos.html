@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="../images/f1-3.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/pilotos.css">
+    <link rel="stylesheet" href="../styles/equipos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -18,23 +19,42 @@
     <title>F1 - PILOTOS</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="../images/f1-3.png" alt="">
-            </div>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./equipos.html">Equipos</a> </li>
-                <li><a href="./pilotos.html">Pilotos</a> </li>
-                <li><a href="./carerras.html">Carreras</a></li>
-                <li><a href="./pistas.html">Pistas</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
+    <header class="header">
+        <nav class="nav">
+          <!-- <a href="#" class="logo nav-link">Logo</a -->
+
+          <div class="logo nav-link">
+            <img src="../images/f1-3.png" alt="">
+         </div>
+          <button class="nav-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu">
+            <li class="nav-menu-item">
+              <a href="../index.html" class="nav-menu-link nav-link">Inicio</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="../pages/equipos.html" class="nav-menu-link nav-link">Equipos</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="../pages/pilotos.html" class="nav-menu-link nav-link">Pilotos</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="../pages/carerras.html" class="nav-menu-link nav-link">Carreras</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="../pages/pistas.html" class="nav-menu-link nav-link">Pistas</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="../pages/contacto.html" class="nav-menu-link nav-link nav-menu-link_active"
+                >Contacto</a
+              >
+            </li>
+          </ul>
         </nav>
     </header>
     <main>
-        <h1>PILOTOS</h1> 
+<!--         <h1>PILOTOS</h1>  -->
         <div class="pilotosContainer">
             <div class="mercedes">
                 <div class="nombre">Lewis Hamilton
@@ -130,5 +150,6 @@
     <footer>
         <h3>Todos los derechos reservados</h3>
     </footer>
+    <script src="../scripts/app.js"></script>
 </body>
 </html>

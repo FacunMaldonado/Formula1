@@ -3,7 +3,8 @@
   width: 100%;
   align-items: center;
   flex-direction: column;
-  row-gap: 2rem; }
+  row-gap: 2rem;
+  margin-top: 10rem; }
   .pilotosContainer .mercedes, .pilotosContainer .ferrari, .pilotosContainer .redbull, .pilotosContainer .astonMartin, .pilotosContainer .mcLaren, .pilotosContainer .alphaRomeo, .pilotosContainer .haas, .pilotosContainer .williams, .pilotosContainer .alpine, .pilotosContainer .alphaTauri {
     display: flex;
     flex-direction: row;

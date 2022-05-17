@@ -91,17 +91,7 @@ nav li a:hover{
   filter: drop-shadow(1px 1px 20px rgba(255, 255, 255, 0.767));
 }
 
-.teams ul{
-    display: flex;
-    flex-flow: wrap;
-    list-style: none;
-  } 
-  
-  .nombreEquipo{
-    display: block;
-    font-family: F1;
-    font-size: 1rem;
-  }
+
 
   body{
     background-color: rgb(1, 1, 1);
