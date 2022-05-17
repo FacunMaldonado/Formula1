@@ -18,21 +18,38 @@
     <title>F1 - CARERRAS</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="../images/f1-3.png" alt="">
-            </div>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./equipos.html">Equipos</a> </li>
-                <li><a href="./pilotos.html">Pilotos</a> </li>
-                <li><a href="./carerras.html">Carreras</a></li>
-                <li><a href="./pistas.html">Pistas</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="header">
+    <nav class="nav">
+    <!-- <a href="#" class="logo nav-link">Logo</a -->
+
+    <div class="logo nav-link">
+        <img src="../images/f1-3.png" alt="">
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-menu">
+        <li class="nav-menu-item">
+            <a href="../index.html" class="nav-menu-link nav-link">Inicio</a>
+        </li>
+        <li class="nav-menu-item">
+            <a href="../pages/equipos.html" class="nav-menu-link nav-link">Equipos</a>
+        </li>
+        <li class="nav-menu-item">
+            <a href="../pages/pilotos.html" class="nav-menu-link nav-link">Pilotos</a>
+        </li>
+        <li class="nav-menu-item">
+            <a href="../pages/carerras.html" class="nav-menu-link nav-link">Carreras</a>
+        </li>
+        <li class="nav-menu-item">
+            <a href="../pages/pistas.html" class="nav-menu-link nav-link">Pistas</a>
+        </li>
+        <li class="nav-menu-item">
+            <a href="../pages/contacto.html" class="nav-menu-link nav-link nav-menu-link_active">Contacto</a>
+        </li>
+    </ul>
+    </nav>
+</header>
 
     <!-- <h1>CARRERAS</h1> -->
 
@@ -121,11 +138,10 @@
             </ul>
         </div>
     </footer>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.25/moment-timezone.min.js"></script>
     <script src="../scripts/carreras.js"></script>
+    <script src="../scripts/app.js"></script>
 </body>
 </html>

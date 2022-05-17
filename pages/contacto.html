@@ -17,19 +17,36 @@
     <title>F1 - CONTACTO</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="../images/f1-3.png" alt="">
-            </div>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./equipos.html">Equipos</a> </li>
-                <li><a href="./pilotos.html">Pilotos</a> </li>
-                <li><a href="./carerras.html">Carreras</a></li>
-                <li><a href="./pistas.html">Pistas</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
+    <header class="header">
+        <nav class="nav">
+        <!-- <a href="#" class="logo nav-link">Logo</a -->
+    
+        <div class="logo nav-link">
+            <img src="../images/f1-3.png" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-menu-item">
+                <a href="../index.html" class="nav-menu-link nav-link">Inicio</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="../pages/equipos.html" class="nav-menu-link nav-link">Equipos</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="../pages/pilotos.html" class="nav-menu-link nav-link">Pilotos</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="../pages/carerras.html" class="nav-menu-link nav-link">Carreras</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="../pages/pistas.html" class="nav-menu-link nav-link">Pistas</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="../pages/contacto.html" class="nav-menu-link nav-link nav-menu-link_active">Contacto</a>
+            </li>
+        </ul>
         </nav>
     </header>
     <h1>CONTACTO</h1>
@@ -52,23 +69,40 @@
                 </select>
     
                 <label for="genero">Elige tu genero</label>
-                <br>
                     <input class="containerGeneros" type="radio" name="genero" value="Hombre">Hombre <br>
                     <input class="containerGeneros" type="radio" name="genero" value="Mujer">Mujer <br>
                     <input class="containerGeneros" type="radio" name="genero" value="No-binario">No-binario
                 
-      
+
                 <div class="bottomForm">
                     <button type="submit" name="" id="">Enviar</button>
                     <button type="reset"> reset</button>
                 </div>
-           
-
         </fieldset>
     </form>
 
     <footer>
         <h3>Todos los derechos reservados</h3>
+        <div class="socialMedia">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/f1/" target="_blank">
+                        <i class="fa-brands fa-instagram-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/f1" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/F1" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </footer>
+    <script src="../scripts/app.js"></script>
 </body>
 </html>
